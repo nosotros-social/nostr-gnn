@@ -1,0 +1,38 @@
+[project]
+name = "nostr_gnn"
+version = "0.0.1"
+description = "Graph neural network models for Nostr"
+readme = "README.adoc"
+requires-python = ">=3.12"
+dependencies = [
+    "colorlog>=6.9.0",
+    "fastparquet>=2026.3.0",
+    "hydra-zen>=0.16.0",
+    "ipykernel>=6.29.5",
+    "modal>=1.4.1",
+    "pyarrow>=23.0.1",
+    "pydantic>=2.12.5",
+    "pydantic-settings>=2.13.1",
+    "pyright>=1.1.408",
+    "python-lsp-ruff>=2.3.0",
+    "python-lsp-server[rope]>=1.14.0",
+    "torch>=2.10.0",
+    "torch-geometric>=2.7.0",
+    "trackio[apple-gpu]>=0.19.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.7",
+]
+
+[tool.ruff]
+line-length = 90
+indent-width = 4
+exclude = ["*.ipynb"]
+
+[tool.ty.src]
+exclude = ["*.ipynb"]
+
+[tool.ruff.lint]
+ignore = ["F841", "W391"]

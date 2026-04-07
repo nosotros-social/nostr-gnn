@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.venv/
+.ruff_cache/
+.ropeproject/
+.ipynb_checkpoints/
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+/data/
+/outputs/
+/models/*

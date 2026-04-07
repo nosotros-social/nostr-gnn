@@ -1,0 +1,3 @@
+= NostrGNN
+
+Graph neural network model for Nostr.

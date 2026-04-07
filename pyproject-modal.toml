@@ -1,0 +1,16 @@
+[project]
+name = "nostr_gnn"
+version = "0.0.1"
+description = "Graph neural network models for Nostr"
+requires-python = ">=3.12"
+dependencies = [
+    "colorlog>=6.9.0",
+    "fastparquet>=2026.3.0",
+    "hydra-zen>=0.16.0",
+    "modal>=1.4.1",
+    "pydantic>=2.12.5",
+    "pydantic-settings>=2.13.1",
+    "torch>=2.10.0",
+    "torch-geometric>=2.7.0",
+    "trackio[gpu]>=0.19.0",
+]

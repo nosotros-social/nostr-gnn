@@ -1,0 +1,48 @@
+defaults:
+  - _self_
+  - loader: neighbor
+  - dataset: dataset
+  - module: graphsage
+
+loader:
+  num_neighbors: [5, 3]
+  shuffle: true
+
+dataset:
+  dir: data
+  feature_columns:
+    - rank
+    - follower_cnt
+    - post_cnt
+    - reply_cnt
+    - reactions_cnt
+    - reports_cnt_sent
+    - reports_cnt_recd
+    - zap_amt_sent
+    - zap_amt_recd
+    - zap_cnt_sent
+    - zap_cnt_recd
+    - zap_avg_amt_day_sent
+    - zap_avg_amt_day_recd
+    - first_created_at
+    - active_hours_start
+    - active_hours_end
+  val_ratio: 0.1
+  test_ratio: 0.1
+  disjoint_train_ratio: 0.3
+
+module:
+  hidden_channels: 128
+  out_channels: 64
+  dropout: 0.3
+
+batch_size: 65536
+train_epochs: 10
+lr: 0.001
+output_dir: outputs/modal
+num_workers: 4
+model_id: sage
+trackio_project: NostrGNN
+trackio_space_id: cesardias/nosotros-ml
+train: true
+test: false
