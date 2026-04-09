@@ -41,7 +41,8 @@ train_epochs: 1
 lr: 0.001
 output_dir: outputs/local
 num_workers: 0
-model_id: sage
+model_id: nostr-sage
+version: v1
 trackio_project: NostrGNN
 trackio_space_id: ""
 train: true

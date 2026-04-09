@@ -45,6 +45,8 @@ class BaseConfig:
     lr: float = 1e-3
     output_dir: str = "outputs"
     num_workers: int = 4
+    model_id: str = "nostr-sage"
+    version: str = "v1"
     trackio_project: str = "NostrGNN"
     trackio_space_id: str = "cesardias/nosotros-ml"
     train: bool = True

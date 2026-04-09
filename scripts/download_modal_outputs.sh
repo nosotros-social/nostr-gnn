@@ -10,4 +10,5 @@ LOCAL_PROCESSED_PATH="${LOCAL_PROCESSED_PATH:-outputs/modal}"
 
 modal volume get "$OUTPUT_VOLUME_NAME" "$REMOTE_OUTPUT_PATH" "$LOCAL_OUTPUT_PATH" --force
 modal volume get "$DATA_VOLUME_NAME" "$REMOTE_PROCESSED_PATH/index_node_id.npy" "$LOCAL_PROCESSED_PATH/index_node_id.npy" --force
+modal volume get "$DATA_VOLUME_NAME" "$REMOTE_PROCESSED_PATH/feature_stats.npz" "$LOCAL_PROCESSED_PATH/feature_stats.npz" --force
 modal volume get "$DATA_VOLUME_NAME" "$REMOTE_PROCESSED_PATH/node_id_pubkey.parquet" "$LOCAL_PROCESSED_PATH/node_id_pubkey.parquet" --force

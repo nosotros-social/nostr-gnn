@@ -11,7 +11,7 @@ from torch_geometric.transforms import RandomLinkSplit
 
 logger = logging.getLogger(__name__)
 
-SCHEMA_VERSION = 6
+SCHEMA_VERSION = 7
 
 # NIP-85 (but not limited to) features
 FEATURE_COLUMNS = (
@@ -205,6 +205,17 @@ class GraphDataset(Dataset):
         logger.info(
             f"Saved index_node_id mapping ({len(all_ids):,} nodes) to "
             f"{index_node_id_path}"
+        )
+
+        feature_stats_path = Path(self.processed_dir) / "feature_stats.npz"
+        np.savez(
+            feature_stats_path,
+            mean=mean.astype(np.float32),
+            std=std.astype(np.float32),
+        )
+        logger.info(
+            f"Saved feature normalization stats ({len(mean):,} dims) to "
+            f"{feature_stats_path}"
         )
 
         node_id_pubkey_path = Path(self.processed_dir) / "node_id_pubkey.parquet"
